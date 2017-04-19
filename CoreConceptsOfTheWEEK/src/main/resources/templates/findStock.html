@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Find a particular stock</title>
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="index.html" th:href="@{/}">Login</a></li>
+        <li><a href="stockList.html" th:href="@{/stockList}">List Of Stocks</a></li>
+        <li><a href="compareStock.html" th:href="@{/compareStock}">Compare My Stocks</a></li>
+    </ul>
+</nav>
+
+<h2>Find A Stock!</h2>
+
+<form action="findStock.html" th:action="@{/findStock}" method="get">
+    <label>
+        <span>Search for stock:</span>
+        <input type="text" name="search" value="" th:value="${search}"/>
+    </label>
+    <br />
+    <button>Find the stock!</button>
+</form>
+
+</body>
+</html>

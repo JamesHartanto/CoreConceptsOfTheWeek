@@ -1,0 +1,9 @@
+// A tool that analyzes historical data of a stock
+
+// Different ways of analysis:
+- annually (have much it changes a year / 2 years /... ago)
+    - percentage
+    - raw value
+
+HTTPSession
+REST
