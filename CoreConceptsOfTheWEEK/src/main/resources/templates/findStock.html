@@ -37,13 +37,13 @@ Search Results:
     <tr>
         <th>name 1</th>
         <th>symbol 1</th>
-        <a href="findStock.html" th:href="@{'/saveStock?stockId=' + ${stock.getStockSymbol()}}">Mark</a>
-
+        <!--<th><a href="findStock.html" th:href="@{'/saveStock?stockId=' + ${stock.getSymbol()}}">Mark</a></th>-->
+        <th><a href="findStock.html" th:href="@{'/saveStock'}">Mark</a></th>
     </tr>
     <tr th:remove="all">
         <th>name 2</th>
         <th>symbol 2</th>
-        <a href="findStock.html">Mark</a>
+        <th><a href="findStock.html">Mark</a></th>
     </tr>
 </table>
 
