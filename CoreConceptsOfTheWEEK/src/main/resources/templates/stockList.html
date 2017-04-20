@@ -16,5 +16,31 @@
 
 <h2>List Of Stocks</h2>
 
+<table>
+    <tr>
+        <th>Name Of Stock</th>
+        <th>Symbol Of Stock</th>
+        <th>Current Value Of Stock At End Of <span>Day</span></th>
+        <th>Value Of Stock At End Of Day <span>Last Year</span></th>
+        <th>Percent Change Last Year</th>
+    </tr>
+
+    <tr th:each="stock : ${stockList}">
+        <th th:text="${stock.getName()}">Name 1</th>
+        <th th:text="${stock.getSymbol()}">Symbol 1</th>
+        <th th:text="${stock.getValue()}">Current Value 1</th>
+        <th>Last Year Value 1</th>
+        <th>Last Year Percent Change 1</th>
+    </tr>
+
+    <tr th:remove="all">
+        <th>Name 2</th>
+        <th>Symbol 2</th>
+        <th>Current Value 2</th>
+        <th>Last Year Value 2</th>
+        <th>Last Year Percent Change 2</th>
+    </tr>
+</table>
+
 </body>
 </html>

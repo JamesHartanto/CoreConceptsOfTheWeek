@@ -25,5 +25,27 @@
     <button>Find the stock!</button>
 </form>
 
+<br />
+
+Search Results:
+<table>
+    <tr>
+        <th>NAME</th>
+        <th>SYMBOL</th>
+        <th>MARK AS INTERESTED STOCK</th>
+    </tr>
+    <tr>
+        <th>name 1</th>
+        <th>symbol 1</th>
+        <a href="findStock.html" th:href="@{'/saveStock?stockId=' + ${stock.getStockSymbol()}}">Mark</a>
+
+    </tr>
+    <tr th:remove="all">
+        <th>name 2</th>
+        <th>symbol 2</th>
+        <a href="findStock.html">Mark</a>
+    </tr>
+</table>
+
 </body>
 </html>

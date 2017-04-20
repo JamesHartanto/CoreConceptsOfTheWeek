@@ -1,5 +1,6 @@
 package com.theironyard;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class StockController {
 
+    @Autowired
+    StockRepository stockRepository;
+
     // Home page - login details (helps keep a list of stocks previously seen??)
     @RequestMapping("/")
     public String homePage(){
@@ -18,7 +22,8 @@ public class StockController {
 
     // Stock list - gives the list of stocks in the database
     @RequestMapping("/stockList")
-    public String stockList(){
+    public String stockList(Model model){
+        model.addAttribute("stockList",stockRepository.listVelocityStocks());
         return "stockList";
     }
 
@@ -35,6 +40,10 @@ public class StockController {
         return "compareStock";
     }
 
+    @RequestMapping("/saveStock")
+        public String saveStock(){
+        return "redirect:/findStock";
+    }
 
 
 }
